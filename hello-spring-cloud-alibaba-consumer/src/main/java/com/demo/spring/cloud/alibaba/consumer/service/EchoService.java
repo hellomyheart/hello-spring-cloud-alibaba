@@ -12,5 +12,4 @@ public interface EchoService {
 
     @GetMapping(value = "/lb")
     public String lb();
-
 }
