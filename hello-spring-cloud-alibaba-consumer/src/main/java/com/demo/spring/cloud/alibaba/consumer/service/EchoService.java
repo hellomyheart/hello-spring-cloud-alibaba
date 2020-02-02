@@ -1,10 +1,11 @@
 package com.demo.spring.cloud.alibaba.consumer.service;
 
+import com.demo.spring.cloud.alibaba.consumer.service.fallback.EchoServiceFailback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "service-provider")
+@FeignClient(value = "service-provider",fallback = EchoServiceFailback.class)
 public interface EchoService {
     //必须要指定路径参数名字
     @GetMapping(value = "/echo/{string}")
