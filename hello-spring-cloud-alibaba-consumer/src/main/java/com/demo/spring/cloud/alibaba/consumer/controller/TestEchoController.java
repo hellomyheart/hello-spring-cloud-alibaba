@@ -16,8 +16,9 @@ public class TestEchoController {
     public String echo(@PathVariable String string) {
         return echoService.echo(string);
     }
-@GetMapping(value = "/lb")
-    public String lb(){
+
+    @GetMapping(value = "/lb")
+    public String lb() {
         return echoService.lb();
     }
 }
