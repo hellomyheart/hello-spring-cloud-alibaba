@@ -8,5 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface EchoService {
     //必须要指定路径参数名字
     @GetMapping(value = "/echo/{string}")
-    String echo(@PathVariable("string") String string);
+    public String echo(@PathVariable("string") String string);
+
+    @GetMapping(value = "/lb")
+    public String lb();
 }
